@@ -3,12 +3,22 @@
 
 import fileinput
 
+punctuation = '''!()-[]{};:'"\,<>./?@#$%^&*_~\n'''
+
 def test():
-    keyword = "This"
-    number = 0
+    #Initialise word to find, keyword.
+    keyword = "London"
+    count = 0
+
+    #Check text for any characters we want to avoid.
     for line in fileinput.input(files= 'Test.txt'):
+        for character in line:
+            if character in punctuation:
+                line = line.replace(character, "")
+        
+        #Compare each word in text file to our keyword
         word = line.split(sep=' ')
         for i in word:
-            if keyword == i:
-                number += 1
-    return number
+            if keyword.lower() == i.lower():
+                count += 1
+    return count
