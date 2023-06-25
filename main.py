@@ -12,5 +12,3 @@ def test():
             if keyword == i:
                 number += 1
     return number
-
-print(test())
