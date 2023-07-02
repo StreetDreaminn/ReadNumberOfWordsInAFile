@@ -2,12 +2,12 @@ import fileinput
 
 punctuation = '''!()-[]{};:'"\,<>./?@#$%^&*_~\n'''
 
-def test(keyword):
+def test(keyword, file):
     #Initialise count variable
     count = 0
 
     #Check text for any characters we want to avoid.
-    for line in fileinput.input(files= 'Test.txt'):
+    for line in fileinput.input(files= file):
         for character in line:
             if character in punctuation:
                 line = line.replace(character, "")
