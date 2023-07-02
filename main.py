@@ -2,9 +2,8 @@ import fileinput
 
 punctuation = '''!()-[]{};:'"\,<>./?@#$%^&*_~\n'''
 
-def test():
-    #Initialise word to find, keyword.
-    keyword = "London"
+def test(keyword):
+    #Initialise count variable
     count = 0
 
     #Check text for any characters we want to avoid.
